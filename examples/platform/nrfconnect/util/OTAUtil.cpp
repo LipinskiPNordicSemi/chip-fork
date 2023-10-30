@@ -44,7 +44,7 @@ chip::DefaultOTARequestor sOTARequestor;
 // compile-time factory method
 OTAImageProcessorImpl & GetOTAImageProcessor()
 {
-#if CONFIG_PM_DEVICE && CONFIG_NORDIC_QSPI_NOR
+#if  defined(CONFIG_PM_DEVICE) && defined(CONFIG_NORDIC_QSPI_NOR)
     static OTAImageProcessorImpl sOTAImageProcessor(&GetFlashHandler());
 #else
     static OTAImageProcessorImpl sOTAImageProcessor;

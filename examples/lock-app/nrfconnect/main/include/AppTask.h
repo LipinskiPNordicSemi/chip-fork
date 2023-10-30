@@ -25,7 +25,7 @@
 
 #include <platform/CHIPDeviceLayer.h>
 
-#if CONFIG_CHIP_FACTORY_DATA
+#ifdef CONFIG_CHIP_FACTORY_DATA
 #include <platform/nrfconnect/FactoryDataProvider.h>
 #else
 #include <platform/nrfconnect/DeviceInstanceInfoProviderImpl.h>
@@ -81,7 +81,7 @@ private:
     FunctionEvent mFunction   = FunctionEvent::NoneSelected;
     bool mFunctionTimerActive = false;
 
-#if CONFIG_CHIP_FACTORY_DATA
+#ifdef CONFIG_CHIP_FACTORY_DATA
     chip::DeviceLayer::FactoryDataProvider<chip::DeviceLayer::InternalFlashFactoryData> mFactoryDataProvider;
 #endif
 };
